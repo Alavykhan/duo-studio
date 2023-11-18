@@ -91,7 +91,7 @@ const tl = gsap.timeline({
         markers: false,
         start :'top 27%',
         end:'top 0',
-        scrub:3,
+        scrub:3, 
     }
 })
 
@@ -108,3 +108,18 @@ tl.to('.page1 h2', {
 tl.to('.page1 video',{
     width: '90%'
 },'anim')
+
+const tl2 = gsap.timeline({
+  scrollTrigger:{
+      trigger:'.page1 h1',
+      scroller:'.main',
+      markers: false,
+      start :'top -90%',
+      end:'top -110',
+      scrub:2,
+  }
+})
+
+tl2.to(".main",{
+  backgroundColor: '#fff'
+})
