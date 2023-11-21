@@ -82,6 +82,14 @@ ScrollTrigger.refresh();
 
 init();
 
+const cursor = document.querySelector('.cursor')
+const main = document.querySelector('.main')
+
+main.addEventListener('mousemove', function(dets){
+      cursor.style.left = dets.x+"px"
+      cursor.style.top = dets.y+"px"
+})
+
 // gsap 
 
 const tl = gsap.timeline({
@@ -122,4 +130,19 @@ const tl2 = gsap.timeline({
 
 tl2.to(".main",{
   backgroundColor: '#fff'
+})
+
+const tl3 = gsap.timeline({
+  scrollTrigger:{
+      trigger:'.page1 h1',
+      scroller:'.main',
+      markers: false,
+      start :'top -470%',
+      end:'top -480',
+      scrub:2,
+  }
+})
+
+tl3.to(".main",{
+  backgroundColor: '#0F0D0D'
 })
